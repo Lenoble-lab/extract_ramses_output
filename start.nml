@@ -1,0 +1,51 @@
+&RUN_PARAMS 
+hydro=.true.
+nrestart=0
+sink=.true.
+rt=.true.
+poisson=.true.
+pic=.true.
+cosmo=.false.   
+verbose=.false.
+/
+
+&OUTPUT_PARAMS
+noutput=1
+tout=1d-40
+/
+
+&UNITS_PARAMS
+units_density = 2.3247434d-24 ! mu * 1.66e-24, where mu = 1.4
+units_time = 2.5395079d15 ! 1/sqrt(G * units_density)
+units_length = 3.08568d18 ! 1 pc in cm
+/
+
+&INIT_PARAMS
+filetype='grafic'
+initfile(1)='IC_multiple/IC_lev_20/'
+! initfile(2)='IC_multiple/IC_lev_24/'
+! initfile(3)='IC_multiple/IC_lev_25/'
+! initfile(4)='IC_multiple/IC_lev_26/'
+/
+
+&AMR_PARAMS
+levelmin=5  ! equal to the resolution of the extracted region
+levelmax=10
+ngridmax=800000
+npartmax=10000
+boxlen=2.11258212921368 ! box len in unit_length (here: in pc)
+/
+
+&REFINE_PARAMS
+!m_refine=30*8
+interpol_var=1
+interpol_type=0
+jeans_refine=30*32
+x_refine  =3*0.5 ! center of the refined region -> center
+y_refine  =3*0.5 ! center of the refined region -> center
+z_refine  =3*0.5 ! center of the refined region -> center
+r_refine  =0.48, 0.23, 0.12 ! radius of the refined region
+exp_refine=3*15
+m_refine = 3*0.0
+
+/
