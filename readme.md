@@ -61,7 +61,7 @@ Then, RAMSES needs to know which area correponds to each cubes, and thus how it 
 Finally, RAMSES has succeeded in building the first output. However, the coarsest level (the level of the largest cube) can be high due to the sampling. The refinement strategy also needs to be updated as the geometrical refinement is no longer needed. To do so, we can then perform a classic restart from the first output, lowering the levelmin to reduce the cost of coarse cells and updating the refinement strategy.
 
 
-### Description of the folders
+## Description of the folders
 - `source/` : The source files of `amr2cube`
 - `bin/` : the bin with the Makefile
 - `extract_ramses_to_graphic.ipynb` : a notebook describing the recipes
